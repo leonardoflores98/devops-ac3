@@ -1,5 +1,0 @@
-
-Linguagem utilizada:
-
-PYTHON (Para construir a tela de login, e todo o backend e frontend)
-SQL (para fazer o banco de dados dos sons do beatbox)
