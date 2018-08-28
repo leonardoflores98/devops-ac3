@@ -1,0 +1,14 @@
+---------------------------------------------------
+Requisitos
+
+- Computador
+- Placa de Audio
+- Interface de Audio
+- Fone
+- Microfone
+- Banco de Dados
+- Beatboxer
+
+O Produto deve ensinar a uma pessoa, por meios de audio, o conhecimento necessario para aprender a fazer o beatbox
+
+--------------------------------------------------
