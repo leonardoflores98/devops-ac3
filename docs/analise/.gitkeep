@@ -1,3 +1,7 @@
+<<<<<<< HEAD
 # Análise
 	* Os requisitos básicos para o projeto são um computador 64bits capaz de suportar uma placa e uma interface de áudio, um fone de ouvido 7.1, um microfone, um banco de dados e um beatboxer.
 	* O sistema irá funcionar quando através do transmissor de áudio irá reproduzir o som, e captar através do receptor de áudio, o som que o cliente estiver fazendo para armazenar em seu banco de dados.
+=======
+TESTE
+>>>>>>> remotes/origin/master
