@@ -1,1 +1,49 @@
+Este guia é voltado para desenvolvedores e administradores de sistemas que têm interesse em hostear a aplicação do BDance e / ou contribuir com o seu desenvolvimento. Para a versão mais atual, visite a página deste guia na wiki do BDance.
 
+Configuração básica do ambiente de desenvolvimento / produção
+O BDance é uma aplicação web de código aberto construída com o framework Rails para a linguagem de programação Ruby. É pré-requisito, portanto, a presença desses dois componentes no ambiente de desenvolvimento ou produção em que a aplicação será executada.
+
+A configuração de um ambiente Ruby on Rails não deve ser uma atividade muito laboriosa e a utilização de ferramentas como o Ruby Version Manager e Bundler deve facilitar todo o processo. Documentação a respeito é prolífica e disponível livremente na web, bem como tutoriais sobre o tema (veja a seção de referências).
+
+Obtendo e executando o código
+Uma vez que o ambiente estiver devidamente configurado, é necessário dispor do código da aplicação para a sua execução. O código pode ser obtido gratuitamente, já que se trata de uma aplicação de código aberto. O repositório central do BDance é mantido no Github e pode ser baixado através do git. Informações mais detalhadas sobre como fazer isso são dispostas no anexo A.
+
+Com o código em mãos, deve-se, antes de rodar o servidor da aplicação, criar e configurar adequadamente um Sistema de Gerenciamento de Banco de Dados (SGBD) para a persistência das entidades do modelo (usuários, turmas, modalidades e tudo o mais). O framework Rails provê uma camada de abstração que permite a utilização de diversos SGBD’s. Para mais informações sobre como criar o banco e as tabelas que a aplicação utliza e configurar a aplicação para se conectar ao SGBD, consulte o anexo B.
+
+Pronto. Uma vez que o banco está criado e a aplicação devidamente configurada para utilizá-lo, já é possível rodar o servidor e usufruir dos serviços oferecidos pelo BDance. No entanto, antes disso, há alguns detalhes para os quais se deve atentar com vistas a estabelecer o funcionamento pleno de funcionalidades que demandam configuração adicional, como a autenticação com Facebook. Para saber, detalhadamente, como criar uma aplicação no Facebook e configurar sua instância do BDance para utilizá-la, consulte o anexo C.
+
+O framework Rails provê um servidor built-in para a execução rápida da aplicação web. Para iniciá-lo, basta executar, na linha de comando:
+
+$ rails s
+Esse comando instancia o servidor, que torna a aplicação acessível (localmente) através do endereço http://localhost:3000. A utilização desse servidor web, no entanto, não é aconselhada para ambientes de produção. Para mais informações sobre como implantar aplicações Ruby on Rails em ambiente de produção, aconselha-se visitar as páginas indicadas na seção de referências.
+
+Contribuindo com o desenvolvimento
+Como desenvolvedor, a primeira coisa interessante a se fazer (já com o ambiente de desenvolvimento configurado como mencionado acima) é rodar os testes. O BDance implementa, atualmente, testes de modelo, controladores, views, rotas e requisições através da ferramenta para testes automatizados RSpec.
+
+Para execução bem sucedida dos testes, é necessário que as configurações para o banco de testes sejam feitas adequadamente (se tiver dúvidas quanto a isso, consulte o anexo B). Para implantar o banco de testes, execute o comando
+
+$ rake db:test:prepare
+e, depois, para executar os testes:
+
+$ rspec
+todos devem passar, idealmente.
+
+Os testes garantem que seu ambiente de desenvolvimento está devidamente configurado e que, portanto, está pronto para dar suporte à implementação das suas incríveis contribuições! Depois que tiver implementado tudo, crie um pull request (veja o anexo D para consultar especificidades sobre como isso deve ser feito). Não esqueça de, antes de criar o pull request, executar todos os testes e ter certeza de que todos passam.
+
+Ideias, sugestões e questões relacionadas ao código são mantidas através de issues do Github. Sinta-se livre para criar novos issues e, se você for criar algum a respeito de problemas no código, consulte o anexo E.
+
+Referências
+Tutoriais para configuração do ambiente Ruby on Rails
+Executando aplicações Ruby on Rails na nuvem com o Nitrous.io
+Configuração do ambiente e introdução ao desenvolvimento Ruby on Rails
+Tutoriais para deploy de aplicações Ruby on Rails
+Deploy de aplicações Rails no Heroku
+Deploy de aplicações no Heroku usando o Git (tutorial em inglês)
+Tutoriais adicionais
+Guia completo, em inglês, para configuração e implantação de aplicações Ruby on Rails no Heroku
+Instalação e configuração manual do SGBD PostgreSQL no Linux
+Dicas sobre como utilizar issues no Github
+Pull requests dentro de um mesmo repositório, através de branches distintos
+Anexos
+A. Clonando o repositório do Github
+Clonar o repositório é fácil e o único requisito é ter o git instalado em sua máquina. Se você precisar de ajuda pra configurar o git, pode consultar este guia do Github.
