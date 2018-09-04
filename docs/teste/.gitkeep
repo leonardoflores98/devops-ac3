@@ -1,1 +1,136 @@
+1. Introdução
+No ciclo de desenvolvimento de softwares, a realização de testes tem espaço desde a fase de design até o lançamento do produto. Eles conferem confiabilidade ao software, reorientam o desenvolvimento do design e do código, e poupam gastos desnecessários, quando detectam erros nas fases iniciais do desenvolvimento de um software.
 
+A necessidade e a importância dos testes aumentam de acordo com o tipo de uso que o software terá – os que podem causar danos à vida humana ou levar a grandes perdas financeiras são críticos e devem ser disponibilizados para uso apenas após um processo de testes criterioso. Além disso, quanto mais precoce a detecção de falhas ocorre, menores os gastos do projeto com reparos e replanejamento. É por esse motivo que a utilização de ferramentas de suporte a testes tem se tornado uma regra no desenvolvimento de software. A suite de aplicações Rational é um exemplo bastante ilustrativo de quanto as grandes companhias estão interessadas em melhorar o processo de testes como um todo, já que inclui ferramentas para desenvolvimento de casos de teste como o Rational Functional Tester, ferramentas de desenvolvimento com suporte a teste (inclusive desenvolvimento dirigido por testes, ou test-driven development), como o Rational Software Architect, gerenciamento de ciclo de vida de testes e defeitos como o Rational Team Concert e o Rational Quality Manager, entre outros.
+
+Os testes também fazem parte dos procedimentos seguidos para garantir a qualidade do processo de desenvolvimento de softwares, através de certificações concedidas por organizações que avaliam o processo considerando modelos de qualidade, como o CMMI (Capability Maturity Model Integration) e a ISO-12207.
+
+Além disso, nos últimos anos vêm surgindo instituições e consórcios que visam delimitar o teste de software como uma área de conhecimento com vida própria. O International Software Testing Qualifications Board (ISTQB) é uma das instituições mais respeitadas da área de teste de software, pois propõe uma uniformização dos conceitos e nomenclatura da disciplina. Grandes corporações, inclusive a IBM, têm boa parte de seus profissionais certificados pelos exames da ISTQB e processos de desenvolvimento que utilizam o modelo ISTQB em seus artefatos e relatórios de testes de software. O ISTQB possui ramificações no Brasil (BSTQB), Estados Unidos (ASTQB) e Inglaterra (ISEB).
+
+Portanto, para que os testes suportem todos esses aspectos do desenvolvimento de softwares, é preciso que eles sejam projetados e realizados de acordo com o tipo de software e as necessidades que ele irá atender. Neste artigo vamos tratar especificamente da primeira etapa dos trabalhos de testes no ciclo de desenvolvimento de softwares: a criação de planos de teste.
+
+2. ISTQB/ISEB Foundation Level
+O plano de teste
+O plano de testes é o documento principal dos testes de software. Nele estão contidas informações importantes sobre as partes envolvidas no teste, os objetivos do teste, as partes do software a serem testadas, os critérios de aceitação e os passos necessários para executar os testes.
+
+Cada plano de testes possui descrição de um ou mais casos de teste. Um caso de teste compreende no mínimo um conjunto de ações a serem executadas e um critério de aceitação, que diz se o teste foi bem sucedido ou não. Na maioria das vezes os casos de teste possuem também critérios de entrada ou requisitos, e vem acompanhados de uma breve descrição do item a ser testado e dos objetivos que ele busca atingir.
+
+À medida que a disciplina de testes de software foi se profissionalizando nos últimos anos, novas seções foram adicionadas aos planos de teste, como sumário de alto nível e lições aprendidas. Estas seções tem o intuito de situar o plano de testes e a equipe de testes com relação a outras equipes e ao planejamento do projeto como um todo.
+
+2.2. O padrão de plano de testes IEEE 829
+O primeiro nível do exame de certificação ISTQB/ISEB, o Foundation Level, aborda o desenvolvimento e a execução de testes, além de administração e ferramentas para teste. O padrão adotado por ambas as instituições para a criação dos planos de teste é o IEEE 829, conhecido como “829 Standard for Software and System Test Documentation”.
+
+Esse padrão define a estrutura de vários documentos relativos a testes de software. A escolha dos documentos que darão o suporte suficiente aos testes depende da complexidade deste, da equipe de testes disponível e do tempo dedicado aos testes durante o desenvolvimento do software. O plano de teste que será detalhado neste artigo contém as especificações do design do teste, dos casos de teste e dos procedimentos de teste.
+
+2.3. Design do teste
+O design do teste descreve as condições que os testes devem atender e o comportamento que se deve esperar do software a ser testado. Ele pode ser baseado nas requisições do sistema, nas necessidades de negócio ou no fluxo de processos para os quais o software foi projetado. Nesse documento são identificados os atributos a serem testados, as abordagens que serão utilizadas, os testes em si e os critérios de aprovação e reprovação de cada um deles.
+
+O design de testes, portanto, é a base para a criação dos demais documentos, pois define o escopo do plano de testes, o que será abrangido e o quais os resultados esperados. Ele é definido pelo padrão IEEE 829 no Modelo de Especificação de Design de Teste.
+
+Há três técnicas para design de testes:
+
+Caixa-preta (ou baseado em especificações)
+Caixa-branca (ou baseado na estrutura do software)
+Baseado na experiência de uso de softwares semelhantes
+2.3.1. Caixa-preta
+O design de testes que se baseia nas especificações do software (caixa-preta) foca em sua funcionalidade, verifica se ele cumpre o que foi proposto. Geralmente são definidos dados de entrada e os esperados dados de saída. Ao final de cada ciclo de testes, os dados de saída são comparados com aqueles definidos no Plano de Testes e a aprovação depende da paridade entre eles. A técnica da caixa-preta é útil para todos os níveis de teste, desde os de componentes até os de sistema e aceitação, pois é fundamental que o software atenda suas especificações. Um exemplo de ferramenta de suporte ao teste de caixa-preta é o Rational Functional Tester (RFT).
+
+2.3.2. Caixa-branca
+Já o design baseado na estrutura (caixa-branca) investiga o funcionamento do software e analisa sua estrutura interna, por isso também é chamado de caixa-branca ou de vidro. Os testes podem se restringir a componentes específicos ou abranger o software como um todo, mas a abordagem depende dos processos executados pelo software. Uma prática comum é escolher processos críticos do software e executá-los de várias maneiras diferentes, com o objetivo de detectar falhas e medir sua performance em cenários distintos. Esse tipo de técnica também é útil em todos os níveis de teste, mas com uma abordagem diferente dependendo do nível. Para testes de componentes e integração, a estrutura do software é o foco; em testes de sistema e aceitação, a estrutura relativa ao uso do software (como menus e componentes principais) se torna o alvo dos testes. A IBM possui, dentro da suite Rational, a ferramenta Rational Purify que é um depurador em tempo de execução, baseada na técnica de análise estática de código-fonte. Além disso, algumas funcionalidades que viabilizam testes do tipo caixa-branca podem ser encontradas embutidas no Rational Software Architect e no Rational Application Developer.
+
+2.3.3. Baseado na experiência e conhecimento
+Por fim, o design de testes baseado na experiência usa o conhecimento e a intuição do engenheiro de testes e usuários experientes para a determinação das condições de teste e a criação de casos de testes. Engenheiros de teste experientes na área do software a ser desenvolvido têm mais facilidade em imaginar cenários em que o produto possa apresentar vulnerabilidade. E o envolvimento de usuários enriquece o Plano de Testes, pois eles têm outra perspectiva do software e das necessidades que ele deve atender. Para testes de sistemas de baixo risco essa técnica costuma ser a única usada. Nos demais casos, ela é complementar às demais, e muito útil quando não há uma especificação de software bem definida. Neste caso é possível valer-se de ferramentas de gerenciamento de ciclo de vida e defeitos, como o Rational Team Concert e o Rational Quality Manager, que fornecem informações valiosas sobre o histórico do desenvolvimento do software. Essas informações podem ser utilizadas para a criação de casos de teste focados nas áreas críticas onde houve maior volume de defeitos, por exemplo. É possível também fazer comparações entre versões diferentes de um mesmo software sob a perspectiva do desempenho, utilizando o Rational Performance Tester.
+
+2.4. Casos de teste
+Com o documento de especificação do design de teste pronto, parte-se para a criação dos casos de teste e dos procedimentos de teste. O Modelo de Especificação de Casos de Teste do IEEE 829 inclui a descrição do ambiente de testes, as pré e pós condições do teste, a descrição do teste e seus objetivos, os inputs e outputs esperados e as dependências entre os testes. Ele é um documento bem detalhado, que poderá ser usado como referência em todas as etapas do teste e pode sofrer atualizações para melhor se adequar ao design de testes e ao comportamento que o software apresentar durante os testes.
+
+Por fim, a Especificação dos Procedimentos de Teste é definida pelo Padrão IEEE 829 como o documento que reúne o propósito dos testes, seus requerimentos específicos e finalmente o passo a passo detalhado de realização dos testes. É um documento ainda mais técnico que os demais, que descreve com detalhes e em sequência os passos a serem seguidos em cada caso de teste, seja ele manual ou automatizado. Ele também é chamado de script de testes e, juntamente com os demais documentos descritos nesse capítulo, faz parte do modelo de Plano de Teste explorado no capítulo seguinte.
+
+Passo a passo do design do Plano de Teste de software
+Informações sobre o documento
+Sumário do documento
+Nome do projeto	Nome
+Nome do componente	Nome
+Autores do documento	Nomes
+Data	DD/MM/AAAA
+Número de páginas	
+Sumário de alterações do Documento
+Versão	Data	Descrição	Responsável
+0.1	DD/MM/AAAA	<Primeiro esboço do documento criado>	Nome
+0.2	DD/MM/AAAA	<Documento revisado e editado>	Nome
+1.0	DD/MM/AAAA	<Aprovado>	Nome
+Aprovadores
+Nome	Cargo
+Nome	<Gerente de Qualidade>
+Nome	<Arquiteto de Software>
+Nome	<Gerente de Projetos>
+Documentos de Referência
+Documento	Referência
+<Plano do projeto>	Fonte
+<Especificação dos requerimentos>	Fonte
+<Design de alto nível>	Fonte
+1 Introdução
+Na Introdução os objetivos gerais do Plano de Teste são apresentados de forma clara e não detalhada.
+
+1.1 Sumário de alto nível
+O sumário de alto nível define o escopo dos testes descritos no Plano em relação ao projeto de desenvolvimento do software como um todo. Ele não contém aspectos técnicos, pois é uma descrição que deve ser entendida por todos os envolvidos no projeto, como executivos e gestores de projeto.
+
+Pode incluir restrições de recursos relacionados aos testes, escopo do esforço de teste, relacionamento dos testes com outros métodos de avaliação do software (análises e revisões) e os processos de controle, comunicação e coordenação das atividades-chave.
+
+1.2 Terminologia
+Essa sessão é útil para identificar termos técnicos, comerciais ou próprios da empresa que são utilizados ao longo do documento, como nomes de produtos que são refereciados e processos próprios da empresa.
+
+2 Ambiente e Configuração dos Testes
+Nesta sessão são descritos o ambiente de testes e as configurações necessárias para a execução deles.
+
+2.1 Plataformas
+Os testes devem ser executados em todas as plataformas suportadas pelo software, pois é necessária uma documentação que sustente essa garantia de suporte dada pelo fabricante do software. Cada uma das platoformas a serem usadas nos testes deve ser descrita com detalhe, com foco nas características mais relavantes ao sotware a ser testado: tipo de máquina, capacidade de processamento, sistema operacional, quantidade de memória disponível...
+
+2.2 Configurações
+Assim como as plataformas, as configurações usadas em cada ambiente de testes devem ser descritas detalhadamente: softwares relacionados àquele a ser testado, drivers necessários ao seu uso, entre outras.
+
+3 Análise e Estratégia de Teste
+A análise e a estratégia de teste são descritas minuciosamente nesta sessão, que abrange os objetivos, as dependências, a preparação e finalmente os casos de teste.
+
+3.1 Objetivos dos testes
+Os objetivos dos testes são pautados pelas características finais desejadas do software: segurança, integração com outros processos ou softwares e geração de determinados dados são alguns exemplos.
+
+3.1.1 Obj 1 - <Definição do objetivo. Exemplo: Segurança>
+
+Condição do teste: <Condição que deve ser atendida para que o objetivo seja satisfeito. Exemplo: Somente usuários autorizados devem ter acesso às funcionalidades do software.>
+Abordagem: <De que forma esse objetivo pode ser avaliado? Exemplo: Devem ser usadas combinações corretas e incorretas/inválidas de usuário e senha na tela de autenticação do usuário.>
+Critério de aceitação: <Critério que define se o obejtivo foi atendido. Exemplo: O processo de autenticação para uso do software deve negar acesso em caso de combinações incorretas de usuário e senha e permitir o acesso quando a combinação fornecida for correta.>
+3.2 Dependências dos casos de teste
+Nessa sessão são descritos os requisitos que devem ser atendidos para a realização dos testes. Pode ser necessária a preparação de dados de entrada para que o software os reconheça, por exemplo.
+
+3.3 Preparação para os casos de teste
+Tudo o que deve ser preparado antes de se iniciar a execução dos testes é descrito nessa sessão, como por exemplo a preparação de ambiente, upgrade/downgrade das dependências, ou qualquer outro passo que necessita estar previamente configurado antes do teste.
+
+3.4 Casos de teste
+Os casos de teste definem com detalhe os procedimentos a serem seguidos durante a execução dos testes.
+
+3.4.1 CT 1 - <Nome>
+
+Descrição: <Em que consiste esse caso de teste? Exemplo: Verificar se um usuário não autorizado consegue acessar as funcionalidades do software.>
+Tempo estimado: <Qual é a duração estimada desse teste? Exemplo: A verificação para autenticação deve ser feita em até 3 segundos.>
+Critério de saída: <Quais ações ou dados de saída são esperados? Exemplo: O acesso deve ser negado e uma mensagem exibida ao usuário.>
+Requisitos do ambiente: <Quais os requisitos do ambiente para a realização desse teste? Exemplo: O software a ser testado deve estar instalado no ambiente de testes.>
+Objetivos mapeados: <Quais objetivos são mapeados com esse teste? Exemplo: Obj 1 - Segurança>
+4 Execução dos Testes
+4.1 Cobertura
+Essa sessão lista as funcionalidades do software que são cobertas pelos testes do Plano, além de outros aspectos, como usabilidade, performance e segurança. Ela não deve ter um caráter técnico, e sim deve ser feita sob o ponto de vista do usuário, abordando o que interessará a ele e refletindo o que será testado através dos casos de teste.
+
+4.2 Resultados
+A importância de se registrar os resultados dos testes é muito grande: eles são a base para a criação de itens de trabalho para reparo e replanejamento durante o desenvolvimento. E, ao final do desenvolvimento, a compilação dos resultados dos testes bem-sucedidos são um indicativo relevante da confiabilidade daquele software.
+
+5 Lições aprendidas
+O registro das lições aprendidas durante os testes realizados é um material de consulta muito útil para a criação de novos Planos de Teste, especialmente para pessoas que não participaram dos testes definidos nesse Plano, e para testadores com menos experiência na área. Essa é uma sessão que resume o que pode ser feito de forma melhor em novos testes, especialmente em Planos de Teste de Software semelhantes ao testado.
+
+Bibliografia
+Foundations of Software Testing: ISTQB Certification – Chapter 4: Test Design Techniques, Dorothy Graham et al.
+
+Test Plan Outline (IEEE 829 Format) – Foundation Course in Software Testing - Prepared by Systeme Evolutif Limited, accessed in August, 2012 at http://www.computing.dcu.ie/~davids/courses/CA267/ieee829mtp.pdf
+
+Boris Beizer - Black-Box Testing - Techniques for functional testing of software and systems .
+
+William E. Perry - Effective Methods for Software Testing
