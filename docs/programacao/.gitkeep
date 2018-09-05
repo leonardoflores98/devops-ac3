@@ -1,1 +1,27 @@
 
+BLOCO 1.
+LOGIN DE USUARIO E SENHA(COM INFORMAÇÕES DO PROGRAMA,VERSÃO ETC...)
+
+BLOCO 2.
+TELA DE APRESENTAÇÃO COM INFORMAÇÕES DE USUARIO, PROGRESSO E META.
+
+BLOCO 3.
+EMISSOR DE ÁUDIO P/ USUARIO, E RECEPTOR DE AUDIO P/ USUARIO.
+
+BLOCO 4.
+CONFIGURAÇÕES DE INTERFACE E DE USUARIO, CRÉDITOS E APRESENTAÇÕES FINAIS.
+Linguagem utilizada:
+
+PYTHON (Para construir a tela de login, e todo o backend e frontend)
+SQL (para fazer o banco de dados dos sons do beatbox)
+Requisitos
+
+- Computador
+- Placa de Audio
+- Interface de Audio
+- Fone
+- Microfone
+- Banco de Dados
+- Beatboxer
+
+O Produto deve ensinar a uma pessoa, por meios de audio, o conhecimento necessario para aprender a fazer o beatbox
